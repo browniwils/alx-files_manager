@@ -48,7 +48,7 @@ const isValidId = (id) => {
   return true;
 };
 
-class FilesController {
+export default class FilesController {
   static async postUpload(req, res) {
     const { user } = req;
     const name = req.body ? req.body.name : null;

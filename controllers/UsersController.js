@@ -4,8 +4,8 @@ import dbClient from '../utils/db';
 
 const userQueue = new Queue('email sending');
 
-class UsersController {
-  static async postNewUser(req, res) {
+export default class UsersController {
+  static async postNew(req, res) {
     const email = req.body ? req.body.email : null;
     const password = req.body ? req.body.password : null;
 
@@ -31,7 +31,7 @@ class UsersController {
     res.status(201).json({email, id: userId});
   }
 
-  static async getUser(req, res) {
+  static async getMe(req, res) {
     const { user } = req;
 
     res.status(200).json({email: user.email, id: user._id.toString()});

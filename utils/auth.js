@@ -4,7 +4,7 @@ import dbClient from './db';
 import redisClient from './redis';
 
 
-const getUserAuth = async (req) => {
+export const getUserAuth = async (req) => {
   const auth = req.headers.auth || null;
 
   if (!auth) {
