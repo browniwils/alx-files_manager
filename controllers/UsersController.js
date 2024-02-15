@@ -4,7 +4,7 @@ import dbClient from '../utils/db';
 
 const userQueue = new Queue('email sending');
 
-export default class UsersController {
+class UsersController {
   static async postNew(req, res) {
     const email = req.body ? req.body.email : null;
     const password = req.body ? req.body.password : null;
@@ -38,4 +38,4 @@ export default class UsersController {
   }
 }
 
-module.exports = UsersController;
+export default UsersController;

@@ -1,7 +1,7 @@
 import redisClient from '../utils/redis';
 import { v4 as uuidv4 } from 'uuid';
 
-export default class AuthController {
+class AuthController {
   static async getConnect(req, res) {
     const { user } = req;
     const token = uuidv4();
@@ -18,4 +18,4 @@ export default class AuthController {
   }
 }
 
-module.exports = AuthController;
+export default AuthController;

@@ -1,8 +1,8 @@
 import { basicAuthentication, xTokenAuthentication } from './utils/auth';
-import { AuthController } from './controllers/AuthController'
-import { AppController } from './controllers/AppController'
-import { FilesController } from './controllers/FilesController'
-import { UsersController } from './controllers/UsersController'
+import AuthController from './controllers/AuthController'
+import AppController from './controllers/AppController'
+import FilesController from './controllers/FilesController'
+import UsersController from './controllers/UsersController'
 import { ResposneError, errorResponse } from './utils/middleware';
 
 const routes = (app) => {

@@ -1,4 +1,4 @@
-class ResposneError extends Error {
+export class ResposneError extends Error {
   constructor(code, message) {
     super();
     this.code = code || 500;
@@ -6,7 +6,7 @@ class ResposneError extends Error {
   }
 };
 
-const errorResponse = (err, req, res, next) => {
+export const errorResponse = (err, req, res, next) => {
   const message = `Failed to process ${req.url}`;
 
   if (err instanceof ResposneError) {
@@ -17,6 +17,3 @@ const errorResponse = (err, req, res, next) => {
     error: err ? err.message || err.toString() : message,
   });
 };
-
-module.exports = ResposneError;
-module.exports = errorResponse;

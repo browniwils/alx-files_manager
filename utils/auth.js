@@ -71,6 +71,3 @@ export const basicAuthentication = async (req, res, next) => {
   req.user = user;
   next();
   };
-
-module.exports = basicAuthentication;
-module.exports = xTokenAuthentication;
