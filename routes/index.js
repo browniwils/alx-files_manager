@@ -1,9 +1,9 @@
-import { basicAuthentication, xTokenAuthentication } from './utils/auth';
-import AuthController from './controllers/AuthController'
-import AppController from './controllers/AppController'
-import FilesController from './controllers/FilesController'
-import UsersController from './controllers/UsersController'
-import { ResposneError, errorResponse } from './utils/middleware';
+import { basicAuthentication, xTokenAuthentication } from '../utils/auth';
+import AuthController from '../controllers/AuthController';
+import AppController from '../controllers/AppController';
+import FilesController from '../controllers/FilesController';
+import UsersController from '../controllers/UsersController';
+import { ResposneError, errorResponse } from '../utils/middleware';
 
 const routes = (app) => {
   // Endpoints
@@ -22,11 +22,11 @@ const routes = (app) => {
   app.put('/files/:id/publish', xTokenAuthentication, FilesController.putPublish);
   app.put('/files/:id/unpublish', xTokenAuthentication, FilesController.putUnpublish);
   app.get('/files/:id/data', FilesController.getFile);
-  
+
   app.all('*', (req, res, next) => {
-    errorResponse(new ResposneError(404, `Can\'t ${req.method} ${req.url}`), req, res, next);
+    errorResponse(new ResposneError(404, `Can't ${req.method} ${req.url}`), req, res, next);
   });
   app.use(errorResponse);
-  };
+};
 
 export default routes;

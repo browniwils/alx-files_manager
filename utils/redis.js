@@ -9,12 +9,12 @@ class RedisClient {
     this.client = createClient();
     this.connected = false;
     this.client.on('error', (error) => {
-        console.log(`Redis error: => ${error}`);
-        this.connected = false;
-    })
+      console.log(`Redis error: => ${error}`);
+      this.connected = false;
+    });
     this.client.on('connect', () => {
-        this.connected = true;
-    })
+      this.connected = true;
+    });
   }
 
   isAlive() {
